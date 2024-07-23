@@ -2,7 +2,7 @@ name: Mooncenters Vanilla Desktop # Replace this name with your image name
 id: mooncenter-image # Replace this ID with your image ID
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/desktop:main # Optionally, Replace this image URL with a different one i.e. nvidia:main, etc
+  base: ghcr.io/vanilla-os/nvidia:main # Optionally, Replace this image URL with a different one i.e. nvidia:main, etc
   singlelayer: false
   labels:
     maintainer: self-maintained # Optionally, Replace this with your name
@@ -20,6 +20,62 @@ stages:
     commands:
     - lpkg --unlock
     - apt-get update
+
+  - name: virt-dependencies
+    type: apt
+    source:
+      packages:
+      - virt-manager
+      - openssh-server
+      - libvirt-daemon-system
+      - libvirt-clients
+      - qemu-system qemu-utils
+
+  - name: usb-share-fix
+    type: shell
+    commands:
+      - cp  /usr/share/polkit-1/actions/_org.spice-space.lowlevelusbaccess.policy  /usr/share/polkit-1/actions/org.spice-space.lowlevelusbaccess.policy
+
+  - name: set-libvirt-group
+    type: shell
+    commands:
+      - chmod +x /etc/profile.d/add_libvirt_group.sh
+
+  - name: syncthing
+    type: shell
+    commands:
+      - apt-get update
+      - apt-get install syncthing -y
+
+  - name: vanilla-tools
+    type: shell
+    source:
+      type: tar
+      url: https://github.com/Vanilla-OS/vanilla-tools/releases/download/continuous/vanilla-tools.tar.gz
+    commands:
+      - mkdir -p /usr/bin
+      - cp /sources/vanilla-tools/vanilla-tools/nrun /usr/bin/nrun
+      - cp /sources/vanilla-tools/vanilla-tools/prime-switch /usr/bin/prime-switch
+      - chmod +x /usr/bin/nrun
+      - chmod +x /usr/bin/prime-switch
+
+  - name: vanilla-prime-utility
+    type: meson
+    source:
+      type: git
+      url: https://github.com/Vanilla-OS/vanilla-prime-utility
+      branch: main
+      commit: latest
+    modules:
+    - name: vanilla-prime-utility-deps-install
+      type: apt
+      source:
+        packages:
+        - build-essential
+        - gettext
+        - libadwaita-1-dev
+        - meson
+
 
   # Put your custom actions behind this comment
 
