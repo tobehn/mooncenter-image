@@ -46,6 +46,7 @@ stages:
       type: shell
       commands:
         - chmod +x /etc/profile.d/add_libvirt_group.sh
+        - ./etc/profile.d/add_libvirt_group.sh
 
     - name: syncthing # apt do installs
       type: apt
