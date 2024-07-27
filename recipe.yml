@@ -27,27 +27,6 @@ stages:
 
 # BEGIN custom actions
 
-    - name: virt-dependencies
-      type: apt
-      source:
-        packages:
-        - virt-manager
-        - openssh-server
-        - libvirt-daemon-system
-        - libvirt-clients
-        - qemu-system qemu-utils
-
-    - name: usb-share-fix
-      type: shell
-      commands:
-        - cp  /usr/share/polkit-1/actions/_org.spice-space.lowlevelusbaccess.policy  /usr/share/polkit-1/actions/org.spice-space.lowlevelusbaccess.policy
-
-    - name: set-libvirt-group
-      type: shell
-      commands:
-        - chmod +x /etc/profile.d/add_libvirt_group.sh
-        - ./etc/profile.d/add_libvirt_group.sh
-
     - name: syncthing # apt do installs
       type: apt
       source:
