@@ -1,0 +1,9 @@
+name: install-eza
+type: shell
+source:
+  type: tar
+  url: https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz
+commands:
+  - mkdir -p /usr/local/bin
+  - mv eza /usr/local/bin/eza
+  - rm -rf eza_x86_64-unknown-linux-gnu.tar.gz

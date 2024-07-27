@@ -47,11 +47,16 @@ stages:
       commands:
         - chmod +x /etc/profile.d/add_libvirt_group.sh
 
-    - name: syncthing # Install syncthing via apt
+    - name: syncthing # apt install syncthing
       type: apt
       source:
         packages:
         - syncthing
+
+    - name: install-eza # include eza
+      type: includes
+      includes:
+        - modules/install-eza.yml
 
 # END custom actions
 
