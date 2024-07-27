@@ -41,11 +41,11 @@ stages:
     commands:
       - chmod +x /etc/profile.d/add_libvirt_group.sh
 
-  - name: syncthing
-    type: shell
-    commands:
-      - apt-get update
-      - apt-get install syncthing -y
+  - name: syncthing # Sample module using the built-in Apt module to install packages
+    type: apt
+    source:
+      packages:
+      - syncthing
 
   - name: vanilla-tools
     type: shell
