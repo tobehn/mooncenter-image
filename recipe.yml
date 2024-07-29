@@ -46,16 +46,6 @@ stages:
         - bridge-utils
         - virt-manager
 
-    - name: usb-share-fix
-      type: shell
-      commands:
-        - cp  /usr/share/polkit-1/actions/_org.spice-space.lowlevelusbaccess.policy  /usr/share/polkit-1/actions/org.spice-space.lowlevelusbaccess.policy
-
-    - name: set-libvirt-group
-      type: shell
-      commands:
-        - chmod +x /etc/profile.d/add_libvirt_group.sh
-
 # END custom actions
 
     - name: set-image-name-abroot
