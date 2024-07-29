@@ -45,12 +45,6 @@ stages:
         - libvirt-clients
         - bridge-utils
         - virt-manager
-
-    - name: install-mqtt-explorer # Install MQTT Explorer
-      type: shell
-      commands:
-        - wget https://github.com/thomasnordquist/MQTT-Explorer/releases/download/v0.4.0-beta.6/MQTT-Explorer_0.4.0-beta.6_amd64.deb
-        - dpkg -i MQTT-Explorer_0.4.0-beta.6_amd64.deb
         
 # END custom actions
 
