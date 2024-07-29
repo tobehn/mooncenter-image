@@ -38,11 +38,13 @@ stages:
       type: apt
       source:
         packages:
-        - virt-manager
-        - openssh-server
+        - qemu-kvm
+        - qemu-system
+        - qemu-utils
         - libvirt-daemon-system
         - libvirt-clients
-        - qemu-system qemu-utils
+        - bridge-utils
+        - virt-manager
 
     - name: usb-share-fix
       type: shell
