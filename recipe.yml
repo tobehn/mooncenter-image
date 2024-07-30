@@ -45,11 +45,6 @@ stages:
         - libvirt-clients
         - bridge-utils
         - virt-manager
-
-    - name: install-starship
-      type: shell
-      commands:
-      - curl -sS https://starship.rs/install.sh | sh -y
         
 # END custom actions
 
