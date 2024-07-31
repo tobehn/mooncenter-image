@@ -45,6 +45,7 @@ stages:
         - libvirt-clients
         - bridge-utils
         - virt-manager
+        - virtio-win
         
 # END custom actions
 
