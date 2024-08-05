@@ -45,6 +45,7 @@ stages:
         - libvirt-clients
         - bridge-utils
         - virt-manager
+        - looking-glass-client
         
 # END custom actions
 
