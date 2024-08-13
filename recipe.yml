@@ -46,6 +46,11 @@ stages:
         - bridge-utils
         - virt-manager
         - looking-glass-client
+    
+    - name: include-module-deb-pkgs
+      type: includes
+      includes:
+        - modules/50-install-debs.yml
         
 # END custom actions
 
