@@ -1,0 +1,5 @@
+name: install-qemu
+type: shell
+commands:
+  - bash /qemu-system/install-debs.sh
+  - rm -rf /qemu-system

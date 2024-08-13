@@ -47,6 +47,11 @@ stages:
         - virt-manager
         - looking-glass-client
     
+    - name: include-module-qemu-system
+      type: includes
+      includes:
+        - modules/49-install-qemu.yml
+
     - name: include-module-deb-pkgs
       type: includes
       includes:
