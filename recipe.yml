@@ -41,6 +41,7 @@ stages:
         - qemu-kvm
         - qemu-system
         - qemu-utils
+        - qemu-guest-agent
         - libvirt-daemon-system
         - libvirt-clients
         - bridge-utils
