@@ -47,6 +47,8 @@ stages:
         - bridge-utils
         - virt-manager
         - looking-glass-client
+        - swtpm # SoftWare Trusted Platform Module
+        - swtpm-tools
         
 # END custom actions
 
