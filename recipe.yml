@@ -32,7 +32,7 @@ stages:
       source:
         packages:
         - syncthing
-        #- eza
+        - eza
     
     - name: virt-dependencies
       type: apt
