@@ -32,7 +32,7 @@ stages:
       source:
         packages:
         - syncthing
-        - eza
+        - rust-eza
     
     - name: virt-dependencies
       type: apt
