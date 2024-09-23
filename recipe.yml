@@ -33,6 +33,8 @@ stages:
         packages:
         - syncthing
         - eza
+        - dysk
+        - htop
     
     - name: virt-dependencies
       type: apt
