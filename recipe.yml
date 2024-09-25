@@ -32,7 +32,7 @@ stages:
       source:
         packages:
         - syncthing
-        #- eza
+        - eza
     
     - name: virt-dependencies
       type: apt
@@ -46,9 +46,7 @@ stages:
         - libvirt-clients
         - bridge-utils
         - virt-manager
-        #- virtiofsd
-        #- ovmf
-        #- looking-glass-client
+        - looking-glass-client
         - swtpm # SoftWare Trusted Platform Module
         - swtpm-tools
         
