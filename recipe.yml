@@ -46,6 +46,8 @@ stages:
         - libvirt-clients
         - bridge-utils
         - virt-manager
+        - virtiofsd
+        - ovmf
         - looking-glass-client
         - swtpm # SoftWare Trusted Platform Module
         - swtpm-tools
