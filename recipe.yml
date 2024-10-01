@@ -48,6 +48,7 @@ stages:
         - virt-manager
         - virtiofsd
         - ovmf
+        - spice-vdagent
         - looking-glass-client
         - swtpm # SoftWare Trusted Platform Module
         - swtpm-tools
