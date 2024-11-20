@@ -34,6 +34,7 @@ stages:
         - syncthing
         - eza
         - spacenavd
+        - spnavcfg
     
     - name: virt-dependencies
       type: apt
