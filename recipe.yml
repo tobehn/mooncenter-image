@@ -33,6 +33,7 @@ stages:
         packages:
         - syncthing
         - eza
+        - spacenavd
     
     - name: virt-dependencies
       type: apt
