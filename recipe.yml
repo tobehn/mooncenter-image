@@ -35,6 +35,7 @@ stages:
         - eza
         - spacenavd
         - spnavcfg
+        - libimobiledevice
     
     - name: virt-dependencies
       type: apt
